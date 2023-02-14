@@ -5,7 +5,7 @@ services:
     build:
       context: ./database
       dockerfile: Dockerfile
-    container_name: bagesto_mysql_container
+    container_name: qloapp_mysql_container
     restart: unless-stopped
     expose:
       - "3306"
@@ -25,7 +25,7 @@ services:
     depends_on:  
        database:
           condition: service_healthy
-    container_name: bagesto_container
+    container_name: qloapp_container
     restart: unless-stopped
     ports:
       - "80:80"
